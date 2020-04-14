@@ -1,0 +1,14 @@
+{
+	"users": [
+		{
+			"email": "kermit@muppets.com",
+			"name": "Kermit",
+			"password": "sha256$mmg2cNqn$61c314fc9336b118ebb4f6c7cd6b56e41505cb68817bb1991e6f30074945b5fe"
+		},
+		{
+			"email": "fozzie@muppets.com",
+			"name": "Fozzie",
+			"password": "sha256$QfdkglZ4$6fc85ab0f3e0e8c674373adb2d9e8df9f7300775b36a7d1607bb18beeb0ff9fa"
+		}
+	]
+}
