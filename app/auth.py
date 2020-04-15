@@ -4,9 +4,10 @@ Created on Mar 25, 2020
 @author: CS6252
 '''
 from flask import Blueprint, render_template, redirect, url_for, request, flash
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from app.model.user import User
+from pip._vendor.urllib3.packages.rfc3986.validators import check_password
 
 auth = Blueprint('auth', __name__)
 
@@ -38,8 +39,16 @@ def login():
     return render_template('login.html')
 
 
-@auth.route('/login', method=['POST'])
+@auth.route('/login', methods=['POST'])
 def login_post():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    
+    user = db.get_user(email)
+    if not user or not check_password_hash(user.password, password):
+        flash('Please check your login details and try again.')
+        return redirect(url_for('auth.login'))
+        
     return redirect(url_for('main.profile'))
 
 @auth.route('/logout')
