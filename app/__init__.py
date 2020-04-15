@@ -5,6 +5,7 @@ db = Database()
 
 def create_app():
     app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'jSLFKJcWI3O5uNW436EaV12NEo'
 
     # blueprint for auth routes in our app
     from .auth import auth as auth_blueprint

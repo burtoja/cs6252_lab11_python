@@ -1,14 +1,1 @@
-{
-	"users": [
-		{
-			"email": "kermit@muppets.com",
-			"name": "Kermit",
-			"password": "sha256$mmg2cNqn$61c314fc9336b118ebb4f6c7cd6b56e41505cb68817bb1991e6f30074945b5fe"
-		},
-		{
-			"email": "fozzie@muppets.com",
-			"name": "Fozzie",
-			"password": "sha256$QfdkglZ4$6fc85ab0f3e0e8c674373adb2d9e8df9f7300775b36a7d1607bb18beeb0ff9fa"
-		}
-	]
-}
+{"users": [{"email": "kermit@muppets.com", "name": "Kermit", "password": "sha256$mmg2cNqn$61c314fc9336b118ebb4f6c7cd6b56e41505cb68817bb1991e6f30074945b5fe"}, {"email": "fozzie@muppets.com", "name": "Fozzie", "password": "sha256$QfdkglZ4$6fc85ab0f3e0e8c674373adb2d9e8df9f7300775b36a7d1607bb18beeb0ff9fa"}, {"email": "", "name": "", "password": "sha256$uGuZpo8q$efe6144339bc358d2ab8f705c5496d63427d017795ec124baa650ff772f176c4"}, {"email": "gonzo@muppets.com", "name": "Gonzo", "password": "sha256$RkeW89sf$2f8cafa9a19d0436a9a671e096ea7f2618900b1acb86c0cbf091fe56a3886971"}]}
