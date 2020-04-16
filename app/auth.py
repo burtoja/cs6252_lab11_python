@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from app.model.user import User
 from pip._vendor.urllib3.packages.rfc3986.validators import check_password
+from flask_login import login_user, logout_user, login_required
 
 auth = Blueprint('auth', __name__)
 
@@ -48,9 +49,12 @@ def login_post():
     if not user or not check_password_hash(user.password, password):
         flash('Please check your login details and try again.')
         return redirect(url_for('auth.login'))
-        
+    
+    login_user(user)    
     return redirect(url_for('main.profile'))
 
 @auth.route('/logout')
+@login_required
 def logout():
-    return "logout"
+    logout_user()
+    return redirect(url_for('main.index'))

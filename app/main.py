@@ -4,6 +4,7 @@ Created on Mar 25, 2020
 @author: CS6252
 '''
 from flask import Blueprint, render_template
+from flask_login import current_user, login_required
 
 main = Blueprint('main', __name__)
 
@@ -12,5 +13,6 @@ def index():
     return render_template('index.html')
 
 @main.route('/profile')
+@login_required
 def profile():
-    return render_template('profile.html', name="Username")
+    return render_template('profile.html', name=current_user.name)
